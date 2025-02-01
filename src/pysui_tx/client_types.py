@@ -14,8 +14,6 @@
 
 """Type Client Abstractions."""
 from abc import ABC
-
-from types import NoneType
 from typing import Any
 
 
@@ -56,7 +54,7 @@ class AbstractType(ABC):
             return str(self.value)
         if isinstance(self.value, AbstractType):
             return str(self.value.value)
-        if isinstance(self.value, NoneType):
+        if isinstance(self.value, type(None)):
             return ""
         raise NotImplementedError
 
